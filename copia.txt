@@ -1,0 +1,26 @@
+Meu Nome é: {{$nome}}. Eu tenho {{$idade}} Anos! <br> <!-- CAPTURANDO DADOS VIA BLADE -->
+<hr>
+
+@for($q = 1; $q <= 10; $q++)
+    O valor é: {{$q}}<br>
+
+
+@endfor
+
+
+Versão: {{$versao}} <br>  <!-- ESTA VIEW(variavél) SHARE FOI CONFIGURADA EM: PROVIDERS, AppServiceProvider.php, na linha boot -->
+
+
+@if($idade > 18 && $idade <= 60)
+        Eu sou um Adulto!
+@elseif($idade && $idade <= 120)
+        Eu sou um Idoso!
+@else
+        Eu sou Menor de Idade!
+
+@endif
+
+@isset($versao)
+        Esta é a versão: {{$versao}}
+
+@endisset
