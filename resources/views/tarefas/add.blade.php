@@ -5,11 +5,12 @@
 @section('content')
     <h1>Adição</h1>
 
-    @if(session('warning'))
-        @alert
-            {{session('warning')}}
+    @if($errors->any())
+        @alert <!-- ALERTA DE ERRO DO LARAVEL -->
+            @foreach($errors->all() as $error)
+                {{$error}}<br/>
+            @endforeach
         @endalert
-
     @endif
 
     <form method="POST" >
